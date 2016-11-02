@@ -22,8 +22,8 @@ function routeConfig ($stateProvider) {
     .state('public.signup', {
       url: '/signup',
       templateUrl: 'src/public/signup-form/signup-form.html',
-      controller: 'MenuController',
-      controllerAs: 'menuCtrl',      
+      controller: 'SignUpController',
+      controllerAs: 'reg',
       resolve: {
         menuCategories: ['MenuService', function (MenuService) {
           return MenuService.getCategories();
@@ -32,7 +32,8 @@ function routeConfig ($stateProvider) {
     })
     .state('myinfo', {
       url: '/myinfo',
-      controller: 'myInfoController as infoctrl',
+      controller: 'MyInfoController',
+      controllerAs: 'myinfo',
       templateUrl: 'src/myinfo/myinfo.html',
       resolve: {
         myinfo: ['UserService', function (UserService) {
