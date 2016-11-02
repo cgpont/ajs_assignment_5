@@ -56,13 +56,16 @@
       <br>
 
     <br>
-    <button
-      ng-disabled="regForm.$invalid"
-      ng-click="reg.submit()">Sign Up</button>
+    <label for="menunumber">Menu number: </label>
+    <select>
+      <option ng-repeat="menuCategory in menuCtrl.menuCategories" value="{{menuCategory.short_name}}">
+          {{menuCategory.name}}
+      </option>
+    </select>
 
-      <div style="margin-top: 10px;">
-        Form valid? {{ regForm.$valid }}
-      </div>
+    <br><br>
+    <button ng-disabled="regForm.$invalid" ng-click="reg.submit()">Sign Up</button>
+
   </form>
 </fieldset>
 </div>

@@ -5,11 +5,7 @@ body {
   font-family: 'Oxygen', sans-serif;
 }
 
-input{
-  color: #000;
-}
-
-button{
+input, button, select, option{
   color: #000;
 }
 

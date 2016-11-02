@@ -21,7 +21,24 @@ function routeConfig ($stateProvider) {
     })
     .state('public.signup', {
       url: '/signup',
-      templateUrl: 'src/public/signup-form/signup-form.html'
+      templateUrl: 'src/public/signup-form/signup-form.html',
+      controller: 'MenuController',
+      controllerAs: 'menuCtrl',      
+      resolve: {
+        menuCategories: ['MenuService', function (MenuService) {
+          return MenuService.getCategories();
+        }]
+      }
+    })
+    .state('myinfo', {
+      url: '/myinfo',
+      controller: 'myInfoController as infoctrl',
+      templateUrl: 'src/myinfo/myinfo.html',
+      resolve: {
+        myinfo: ['UserService', function (UserService) {
+          return UserService.getInfo();
+        }]
+      }
     })
     .state('public.menu', {
       url: '/menu',
