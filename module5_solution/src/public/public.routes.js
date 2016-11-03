@@ -32,9 +32,9 @@ function routeConfig ($stateProvider) {
     })
     .state('myinfo', {
       url: '/myinfo',
-      controller: 'MyInfoController',
-      controllerAs: 'myinfo',
       templateUrl: 'src/myinfo/myinfo.html',
+      controller: 'MyInfoController',
+      controllerAs: 'myinfo',      
       resolve: {
         myinfo: ['UserService', function (UserService) {
           return UserService.getInfo();

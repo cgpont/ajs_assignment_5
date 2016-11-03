@@ -12,6 +12,9 @@ function UserService() {
   user.email = "";
   user.phone = "";
   user.menunumber = "";
+  user.menuname = "";
+  user.menudescription = "";
+  user.menuimage = "";
 
   user.save = function (userInfo) {
     user.firstname = userInfo.firstname;
@@ -19,6 +22,9 @@ function UserService() {
     user.email = userInfo.email;
     user.phone = userInfo.phone;
     user.menunumber = userInfo.menunumber;
+    user.menuname = userInfo.menuname;
+    user.menudescription = userInfo.menudescription;
+    user.menuimage = userInfo.menuimage;
     console.log(user);
   };
 
@@ -28,7 +34,10 @@ function UserService() {
       lastname: user.lastname,
       email: user.email,
       phone: user.phone,
-      menunumber: user.menunumber
+      menunumber: user.menunumber,
+      menuname: user.menuname,
+      menudescription: user.menudescription,
+      menuimage: user.menuimage      
     };
     return userInfo;
   };

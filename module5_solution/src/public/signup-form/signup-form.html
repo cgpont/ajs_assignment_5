@@ -56,12 +56,14 @@
       <br>
 
     <br>
-    <label for="menunumber">Menu number: </label>
-    <select name="menunumber" ng-model="reg.user.menunumber">
-      <option ng-repeat="menuCategory in reg.menuCategories" value="{{menuCategory.short_name}}">
-          {{menuCategory.name}}
-      </option>
-    </select>
+    <br>
+    <label for="menunumber">Favourite Menu: </label>
+    <input type="text" name="menunumber" placeholder="Insert your favourite menu" ng-model="reg.user.menunumber">
+    <div ng-if="reg.formStatus == 'error'">NO SUCH MENU NUMBER EXISTS</div>
+      <br>
+
+    <br><br>
+    <div ng-if="reg.formStatus == 'saved'">YOUR INFORMATION HAS BEEN SAVED</div>
 
     <br><br>
     <button ng-disabled="regForm.$invalid" ng-click="reg.submit()">Sign Up</button>

@@ -1,1 +1,14 @@
-hi
+<div class="container">
+  <h1>My Info</h1>
+  <br>
+  <div ng-if="myinfo.firstname == ''">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></div>
+  <div ng-if="myinfo.firstname != ''">
+    First name: {{myinfo.firstname}}<br>
+    Last name: {{myinfo.lastname}}<br>
+    Email: {{myinfo.email}}<br>
+    Phone: {{myinfo.phone}}<br>
+    Favourite menu: <strong>{{myinfo.menuname}}</strong> <em>({{myinfo.menudescription}})</em>
+      <img ng-src="http://cgpont-course5.herokuapp.com/images/{{myinfo.menunumber}}.jpg" alt="{{myinfo.menudescription}}">
+    </ul>
+  </div>
+</div>
